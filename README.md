@@ -8,19 +8,9 @@ and [JavaScript Canvas to Blob](https://github.com/blueimp/JavaScript-Canvas-to-
 
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
-## Demo
-[![Edit Vue Image Upload and Resize ](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/mqnow97omj?module=%2Fsrc%2Fcomponents%2FHelloWorld.vue)
+### Forked
+[kartoteket/vue-image-upload-resize](https://github.com/kartoteket/vue-image-upload-resize)
 
-
-## Installation
-### yarn
-```bash
-yarn add vue-image-upload-resize
-```
-### npm
-```bash
-npm install --save vue-image-upload-resize
-```
 
 ### Usage
 In script entry point
@@ -30,9 +20,9 @@ Vue.use(ImageUploader);
 ```
 ## As global script
 ```html
-<script src="https://unpkg.com/vue-image-upload-resize"></script>
+<script src="path/to/dist/vue-image-upload-resize.umd.min.js"></script>
 ```
-The global script automatically registers as a global componenet. See [public/demo.html](https://github.com/kartoteket/vue-image-upload-resize/blob/master/public/demo.html) for example use.
+The global script automatically registers as a global componenet. 
 
 
 ## Markup
@@ -41,15 +31,15 @@ The global script automatically registers as a global componenet. See [public/de
 <template>
   <image-uploader
     :debug="1"
-    :maxWidth="512"
+    max-width="512"
     :quality="0.7"
-    :autoRotate=true
+    auto-rotate=true
     outputFormat="verbose"
     :preview=false
-    :className="['fileinput', { 'fileinput--loaded' : hasImage }]"
+    :class-name="['fileinput', { 'fileinput--loaded' : hasImage }]"
     capture="environment"
     accept="video/*,image/*"
-    doNotResize="['gif', 'svg']"
+    do-not-resize="['gif', 'svg']"
     @input="setImage"
     @onUpload="startImageResize"
     @onComplete="endImageResize"
